@@ -1,0 +1,65 @@
+.card-wrapper{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid ;
+    gap: 10px;
+}
+
+.icon-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 50px;
+    width: 50px;
+    background-color: antiquewhite;
+
+}
+.text-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.text-content{
+    font-size: 15px;
+}
+
+.login-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid;
+    padding: 20px;
+    margin: 20px;   
+}
+.header{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.fields-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+}
+.label-text{
+    width: 150px;
+}
+
+.input-text{
+    width: 150px;
+    
+}
+input{
+    height: 20px;
+    border-radius: 5px;
+}
+
+button{
+    width: min-content;
+}

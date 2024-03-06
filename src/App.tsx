@@ -1,13 +1,14 @@
-import React from "react";
+import React, { memo } from "react";
 import Button from "./Components/Button";
+import Login from "./Login";
 
 export const App = () => {
+  console.log("i render");
   return (
     <div>
-      <p>App</p>
-      <Button>{"this is button"}</Button>
+      <Login />
     </div>
   );
 };
 
-export default App;
+export default memo(App);
