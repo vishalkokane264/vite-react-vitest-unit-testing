@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "./Components/Card";
+import { DisplayRecords } from "./Components/DisplayRecords";
 
 export const Login = () => {
   const [userName, setUserName] = useState<string>("");
@@ -11,10 +12,12 @@ export const Login = () => {
   const [loggedStatus, setLogedStatus] = useState<boolean>(false);
   const displayRecords = (event: any) => {
     event?.preventDefault();
-    setUserObject({ user: userName, pass: password });
-    setLogedStatus(!loggedStatus);
-    setUserName("");
-    setPassword("");
+    if (userName && password) {
+      setUserObject({ user: userName, pass: password });
+      setLogedStatus(!loggedStatus);
+      setUserName("");
+      setPassword("");
+    }
   };
   return (
     <div data-testid="test-login">
@@ -33,6 +36,7 @@ export const Login = () => {
               type="text"
               name="username"
               value={userName}
+              required
               onChange={(event) => setUserName(event?.target?.value || "")}
             />
           </div>
@@ -42,6 +46,7 @@ export const Login = () => {
               data-testid="input-username"
               className="input-text"
               type="text"
+              required
               name="password"
               value={password}
               onChange={(event) => setPassword(event?.target?.value || "")}
@@ -54,6 +59,7 @@ export const Login = () => {
         <div data-testid="login-success">
           <div data-testid="test-card-condition">
             <Card title={`This is ${userObject.user}`} />
+            <DisplayRecords />
           </div>
 
           <button onClick={displayRecords}>Logout</button>

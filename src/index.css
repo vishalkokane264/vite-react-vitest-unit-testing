@@ -63,3 +63,11 @@ input{
 button{
     width: min-content;
 }
+
+
+.data-display{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
