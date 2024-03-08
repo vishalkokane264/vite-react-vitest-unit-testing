@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import Login from "./Login";
+import * as api from "./Services/apiService";
 
+jest.mock("./api");
 describe("Login page should render with functionality", () => {
   it("should render Login page", () => {
     render(<Login />);

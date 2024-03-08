@@ -5,7 +5,6 @@ axiosService.interceptors.request.use((request) => {
 })
 
 axiosService.interceptors.response.use((response) => {
-    console.log(response)
     return response
 })
 

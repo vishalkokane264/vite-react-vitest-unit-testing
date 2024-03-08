@@ -29,7 +29,7 @@ export const DisplayRecords = () => {
                 return (
                   <div className="data-display" key={elt.id}>
                     <p>{elt.id}</p>
-                    <p>{elt.name}</p>
+                    <p>{elt.email}</p>
                   </div>
                 );
               })

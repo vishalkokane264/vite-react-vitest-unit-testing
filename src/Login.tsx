@@ -21,15 +21,11 @@ export const Login = () => {
   };
   return (
     <div data-testid="test-login">
-      <div data-testid="test-card">
-        <Card title={`This is ${userObject.user}`} />
-      </div>
-
       <div className="login-wrapper" data-testid="test-login-form">
         <div className="header">Login page</div>
         <form>
           <div className="fields-wrapper">
-            <label className="label-text">UserName</label>
+            <label className="label-text">User name</label>
             <input
               data-testid="input-username"
               className="input-text"
@@ -45,14 +41,19 @@ export const Login = () => {
             <input
               data-testid="input-username"
               className="input-text"
-              type="text"
+              type="password"
               required
               name="password"
               value={password}
               onChange={(event) => setPassword(event?.target?.value || "")}
             />
           </div>
-          <button onClick={(event) => displayRecords(event)}>Submit</button>
+          <button
+            disabled={!userName || !password}
+            onClick={(event) => displayRecords(event)}
+          >
+            Submit
+          </button>
         </form>
       </div>
       {loggedStatus === true ? (

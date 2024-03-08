@@ -3,7 +3,6 @@ import Button from "./Components/Button";
 import Login from "./Login";
 
 export const App = () => {
-  console.log("i render");
   return (
     <div>
       <Login />
