@@ -1,3 +1,4 @@
+@import url('/node_modules/@vitelib/component-library/style.css');
 .card-wrapper{
     display: flex;
     flex-direction: row;
@@ -72,3 +73,86 @@ button{
     gap: 10px;
 
 }
+
+.color-palette-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    flex-wrap: wrap;
+}
+.color-palette{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    flex-wrap: wrap;
+}
+
+.color-card{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: 100px;
+    border: 1px solid transparent;
+}
+/* .color-card:nth-child(odd){
+    border: 1px solid blue;
+}
+
+.color-card:nth-child(even){
+    border: 1px solid red;
+} */
+
+.color-card:hover{
+    border: 1px solid black;
+}
+
+
+.fixed-header {
+    background-color: #333;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .scrollable-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+  }
+  
+  .fixed-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    height: 50px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  body{
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+  }
+  
