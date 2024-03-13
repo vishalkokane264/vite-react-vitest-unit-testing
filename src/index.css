@@ -97,8 +97,8 @@ button{
 .color-card{
     display: flex;
     flex-direction: row;
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
     border: 1px solid transparent;
 }
 /* .color-card:nth-child(odd){

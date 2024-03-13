@@ -1,31 +1,36 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "./Services/axiosService";
-import { Button, Header } from "@vitelib/component-library";
 export const Dashboard = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     const callApi = async () => {
       try {
-        const result = await axiosInstance.get("/photos");
+        const result = await axiosInstance.get(
+          "https://jsonplaceholder.typicode.com/photos"
+        );
         if (result && result.data) {
           setData(result.data.slice(0, 50));
         }
       } catch (error) {}
     };
-    callApi();
+    const callProductApi = async () => {
+      try {
+        const result = await axiosInstance.get(
+          "https://dummyjson.com/products"
+        );
+        if (result) {
+          console.log(result);
+          setData(result.data.products.slice(0, 50));
+        }
+      } catch (error) {}
+    };
+    // callApi();
+    callProductApi();
   }, []);
 
   return (
     <div className="app-container">
-      <Header></Header>
       <div className="fixed-header"></div>
-      <Button
-        primary={false}
-        label={" imported button lib"}
-        backgroundColor={"#754242"}
-        size={"medium"}
-      />
-
       <div className="scrollable-content">
         <div className="color-palette-wrapper">
           <div className="color-palette">
@@ -33,7 +38,7 @@ export const Dashboard = () => {
               data.map((elt) => {
                 return (
                   <div key={elt.id} className="color-card">
-                    <img src={elt.url} height={100} width={100} />
+                    <img src={elt.thumbnail} height={200} width={200} />
                     {/* <h5>{elt.title}</h5> */}
                   </div>
                 );
